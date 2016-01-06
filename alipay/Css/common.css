@@ -58,6 +58,7 @@ body{
 }
 .extra ul li{
 	margin: 8px auto;
+	display: block;
 }
 .extra ul li i{
 	font-size: 20px;
