@@ -3,8 +3,8 @@ body{
 	margin: 0;
 }
 /*消除边上滑动条*/
-::-webkit-scrollbar{
-	width: 100px;
+body::-webkit-scrollbar{
+	width: 0;
 	height: 0;
 }
 #navigator{
@@ -39,9 +39,12 @@ body{
 	width: 100%;
 	top: 26.7%;
 	position: absolute;
-	margin-bottom: 100px;
+	margin-bottom: 500px;
 }
 #major{
+	width: 100%;
+}
+#major table{
 	width: 100%;
 }
 tr td{
