@@ -1,11 +1,10 @@
 body{
 	padding: 0;
 	margin: 0;
-
 }
 /*消除边上滑动条*/
 ::-webkit-scrollbar{
-	width: 0;
+	width: 100px;
 	height: 0;
 }
 #navigator{
@@ -40,7 +39,6 @@ body{
 	width: 100%;
 	top: 26.7%;
 	position: absolute;
-	overflow:hidden;
 	margin-bottom: 100px;
 }
 #major{
@@ -79,6 +77,7 @@ tr td img{
 	position: fixed;
 	bottom: 0;
 	overflow: hidden;
+	z-index: 1000;
 }
 #footer img{
 	width: 25%;
