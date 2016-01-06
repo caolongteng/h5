@@ -16,9 +16,18 @@
 		<a id="transaction" href="#"><img src="Images/transaction.png"></a>
 		<div id="extra">
 			<a href="#"><img src="Images/extra.png"></a>
-			<a href="#"><img src="Images/search.png"></a>
+			<a href="#" id="extra-func"><img src="Images/search.png"></a>
 			<a href="#"><img src="Images/contact.png"></a>
 		</div>
+	</div>
+	<!-- 附加功能弹框 -->
+	<div class="extra">
+		<ul>
+			<li><i class="iconfont">&#xe621</i><label>Add Contacts</label></li>
+			<li><i class="iconfont">&#xe630</i><label>Group Chat</label></li>
+			<li><i class="iconfont">&#xe614</i><label>My QR Code</label></li>
+			<li><i class="iconfont">&#xe622</i><label>Help & Feedback</label></li>
+		</ul>
 	</div>
 	<!-- 头部功能 -->
 	<div id="header">
@@ -115,6 +124,18 @@
         pagination: '.swiper-pagination',
         paginationClickable: true
     });
+    </script>
+    <script>
+    	var elem = document.getElementById("extra").childNodes[1];
+    	var elem_div = document.getElementsByClassName("extra")[0];
+    	elem.onclick = function(){
+			elem_div.style.visibility = "visible";
+		}
+		document.onclick = function(e){
+			if (e.target != elem_div && e.target.parentNode != elem){
+				elem_div.style.visibility = "hidden";
+			}
+		}
     </script>
 </body>
 </html>
