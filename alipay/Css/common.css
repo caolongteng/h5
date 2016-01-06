@@ -12,10 +12,15 @@ body{
 }
 #transaction img{
 	width: 28%;
+	height: 100%;
 	float: left;
+}
+#extra{
+	height: 100%;
 }
 #extra img{
 	width: 14%;
+	height: 100%;
 	float: right;
 }
 #header{
@@ -28,27 +33,28 @@ body{
 }
 #header img{
 	width: 25%;
+	height: 100%;
 	float: left;
 }
 .wrap{
 	width: 100%;
+	height: 56.6%;
+	position: absolute;
 	top: 26.7%;
+	overflow:hidden;
+	
+}
+#content{
+	width: 100%;
+	height: 100%;
+	margin: 0 20px;
 	position: absolute;
 	overflow-y:scroll;
 	overflow-x:hidden;
 }
-#content{
-	width: 100%;
-	margin: 0 20px;
-	/*top: 26.7%;
-	position: absolute;
-	overflow-y:scroll;
-	overflow-x:hidden;*/
-}
 #major{
 	width: 100%;
 	height: 200%;
-	/*margin: 0 20px;*/
 	display: table;
 }
 #major .row{
@@ -61,13 +67,18 @@ body{
 #major .row a img{
 	width: 100%;
 }
+#activity{
+	colspan: 2;
+}
 #footer{
 	width: 100%;
+	height: 16.7%;
 	position: fixed;
 	bottom: 0;
 	overflow: hidden;
 }
 #footer img{
 	width: 25%;
+	height: 100%;
 	float: left;
 }
