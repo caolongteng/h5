@@ -1,6 +1,12 @@
 body{
 	padding: 0;
 	margin: 0;
+
+}
+/*消除边上滑动条*/
+::-webkit-scrollbar{
+	width: 0;
+	height: 0;
 }
 #navigator{
 	width: 100%;
@@ -12,15 +18,10 @@ body{
 }
 #transaction img{
 	width: 28%;
-	height: 100%;
 	float: left;
-}
-#extra{
-	height: 100%;
 }
 #extra img{
 	width: 14%;
-	height: 100%;
 	float: right;
 }
 #header{
@@ -33,52 +34,30 @@ body{
 }
 #header img{
 	width: 25%;
-	height: 100%;
 	float: left;
-}
-.wrap{
-	width: 100%;
-	height: 56.6%;
-	position: absolute;
-	top: 26.7%;
-	overflow:hidden;
-	
 }
 #content{
 	width: 100%;
-	height: 100%;
-	margin: 0 20px;
+	top: 26.7%;
 	position: absolute;
-	overflow-y:scroll;
-	overflow-x:hidden;
+	overflow:hidden;
 }
 #major{
 	width: 100%;
-	height: 200%;
-	display: table;
 }
-#major .row{
-	display: table-row;
+tr td{
+	width:  25%;
 }
-#major .row a {
-	display: table-cell;
-	width: 25%;
-}
-#major .row a img{
+tr td img{
 	width: 100%;
-}
-#activity{
-	colspan: 2;
 }
 #footer{
 	width: 100%;
-	height: 16.7%;
 	position: fixed;
 	bottom: 0;
 	overflow: hidden;
 }
 #footer img{
 	width: 25%;
-	height: 100%;
 	float: left;
 }
