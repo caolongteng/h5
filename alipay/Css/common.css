@@ -1,0 +1,73 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+#navigator{
+	width: 100%;
+	height: 10%;
+	position: fixed;
+	top: 0;
+	background-color: #3e454f;
+	z-index: 1000;
+}
+#transaction img{
+	width: 28%;
+	float: left;
+}
+#extra img{
+	width: 14%;
+	float: right;
+}
+#header{
+	width: 100%;
+	height: 16.7%;
+	position: fixed;
+	top: 10%;
+	overflow: hidden;
+	z-index: 1000;
+}
+#header img{
+	width: 25%;
+	float: left;
+}
+.wrap{
+	width: 100%;
+	top: 26.7%;
+	position: absolute;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+#content{
+	width: 100%;
+	margin: 0 20px;
+	/*top: 26.7%;
+	position: absolute;
+	overflow-y:scroll;
+	overflow-x:hidden;*/
+}
+#major{
+	width: 100%;
+	height: 200%;
+	/*margin: 0 20px;*/
+	display: table;
+}
+#major .row{
+	display: table-row;
+}
+#major .row a {
+	display: table-cell;
+	width: 25%;
+}
+#major .row a img{
+	width: 100%;
+}
+#footer{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	overflow: hidden;
+}
+#footer img{
+	width: 25%;
+	float: left;
+}
