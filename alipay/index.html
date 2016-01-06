@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
 	<title>Alipay</title>
 	<link rel="stylesheet" type="text/css" href="Css/common.css">
+	 <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css">
 </head>
 <body>
 	<!-- 顶部导航 -->
@@ -47,6 +49,23 @@
 				</tr>
 			</table>
 		</div>
+		<!-- Swiper -->
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide">Slide 1</div>
+	            <div class="swiper-slide">Slide 2</div>
+	            <div class="swiper-slide">Slide 3</div>
+	            <div class="swiper-slide">Slide 4</div>
+	            <div class="swiper-slide">Slide 5</div>
+	            <div class="swiper-slide">Slide 6</div>
+	            <div class="swiper-slide">Slide 7</div>
+	            <div class="swiper-slide">Slide 8</div>
+	            <div class="swiper-slide">Slide 9</div>
+	            <div class="swiper-slide">Slide 10</div>
+	        </div>
+	        <!-- Add Pagination -->
+	        <div class="swiper-pagination"></div>
+	    </div>
 	</div>
 	<!-- 底部菜单栏 -->
 	<div id="footer">
@@ -55,5 +74,14 @@
 		<a href="#"><img src="Images/friends.png"></a>
 		<a href="#"><img src="Images/me.png"></a>
 	</div>
+
+	<!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
 </body>
 </html>
