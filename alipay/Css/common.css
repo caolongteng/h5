@@ -3,7 +3,7 @@ body{
 	margin: 0;
 }
 /*消除边上滑动条*/
-body::-webkit-scrollbar{
+::-webkit-scrollbar{
 	width: 0;
 	height: 0;
 }
@@ -37,10 +37,13 @@ body::-webkit-scrollbar{
 }
 #content{
 	width: 100%;
-	top: 26.7%;
+	top: 23.7%;
 	position: absolute;
-	margin-bottom: 200px;
+	/*margin-bottom: 200px;*/
+	margin-bottom: 16.7%;
+	background-color: #f5f4f9;
 }
+
 #major{
 	width: 100%;
 }
@@ -56,6 +59,7 @@ tr td img{
 .swiper-container {
     width: 100%;
     height: 100px;
+    margin: 10px auto !important;
 }
 .swiper-slide {
     text-align: center;
@@ -74,6 +78,19 @@ tr td img{
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+}
+.support{
+	display: table;
+	background-color: #ffffff;
+}
+.support .row{
+	display: table-cell;
+}
+.support .row a{
+	width: 25%;
+}
+.support .row img{
+	width: 100%;
 }
 #footer{
 	width: 100%;
