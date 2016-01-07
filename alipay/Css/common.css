@@ -132,9 +132,11 @@ tr td img{
 	background-color: #ffffff;
 	margin-bottom: 16.7%;
 	text-align: center;
+	width: 100%;
 }
 .support .row{
 	display: table-row;
+	width: 100%;
 }
 .support .row a{
 	display: table-cell;
