@@ -131,15 +131,35 @@ tr td img{
 	display: table;
 	background-color: #ffffff;
 	margin-bottom: 16.7%;
+	text-align: center;
 }
 .support .row{
-	display: table-cell;
+	display: table-row;
 }
 .support .row a{
+	display: table-cell;
+	border: 3px solid #f5f4f9;
 	width: 25%;
 }
-.support .row img{
+.support-item{
 	width: 100%;
+	text-decoration: none;
+}
+.support-item .alipay{
+	width: 50%;
+	margin-top: .45rem;
+	margin-bottom: .15rem;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.support-item span{
+	font-size: .55rem;
+	font-weight: normal;
+	display: block;
+	position: relative;
+	margin: .15rem auto;
+	color: #383838;
 }
 #footer{
 	width: 100%;
