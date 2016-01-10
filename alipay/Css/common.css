@@ -23,20 +23,23 @@ body{
 }
 #navigator{
 	width: 100%;
-	height: 10%;
 	position: fixed;
 	top: 0;
 	background-color: #3e454f;
 	z-index: 1000;
 }
-#transaction img{
-	width: 28%;
-	float: left;
-}
 #extra img{
 	width: 14%;
 	float: right;
 }
+#transaction{
+	width: 28%;
+	float: left;
+}
+#transaction img{
+	width: 100%;
+}
+
 .extra{
 	width: 50%;
 	height: auto;
@@ -75,9 +78,6 @@ body{
 /*.extra li*/
 #header{
 	width: 100%;
-	height: 16.7%;
-	position: fixed;
-	top: 10%;
 	overflow: hidden;
 	z-index: 1000;
 }
@@ -87,7 +87,7 @@ body{
 }
 #content{
 	width: 100%;
-	top: 23.7%;
+	top: 120px;
 	position: absolute;
 	background-color: #f5f4f9;
 }
@@ -95,11 +95,21 @@ body{
 #major{
 	width: 100%;
 }
-#major table{
+#major table,tr,td{
 	width: 100%;
+	border-collapse: collapse;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+#major table tr td a{
+	font-size: 0;
+	display: table-cell;
 }
 tr td{
 	width:  25%;
+	border-style: solid;
+	border: 1px solid #ffffff;
 }
 tr td img{
 	width: 100%;

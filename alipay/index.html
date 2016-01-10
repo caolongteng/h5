@@ -9,15 +9,24 @@
 	 <!-- Link Swiper's CSS -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css"> -->
     <link rel="stylesheet" type="text/css" href="Css/swiper.css">
+    <!-- <link rel="stylesheet" type="text/css" href="Css/mobile_reset.css"> -->
 </head>
 <body>
-	<!-- 顶部导航 -->
+	<!-- 顶部固定区域 -->
 	<div id="navigator">
-		<a id="transaction" href="#"><img src="Images/transaction.png"></a>
+		<!-- 顶部导航 -->
 		<div id="extra">
-			<a href="#"><img src="Images/extra.png"></a>
-			<a href="#" id="extra-func"><img src="Images/search.png"></a>
+			<a id="transaction" href="#"><img src="Images/transaction.png"></a>
+			<a href="#" id="extra-func"><img src="Images/extra.png"></a>
+			<a href="#" id="search-func"><img src="Images/search.png"></a>
 			<a href="#"><img src="Images/contact.png"></a>
+		</div>
+		<!-- 头部功能 -->
+		<div id="header">
+			<a href="#"><img src="Images/scan.png"></a>
+			<a href="#"><img src="Images/pay.png"></a>
+			<a href="#"><img src="Images/pocket.png"></a>
+			<a href="http://www.baidu.com"><img src="Images/nearby.png"></a>
 		</div>
 	</div>
 	<!-- 附加功能弹框 -->
@@ -28,13 +37,6 @@
 			<li><a href="http://www.google.com"><i class="iconfont">&#xe614</i><label>My QR Code</label></a></li>
 			<li><a href="http://www.google.com"><i class="iconfont">&#xe622</i><label>Help & Feedback</label></a></li>
 		</ul>
-	</div>
-	<!-- 头部功能 -->
-	<div id="header">
-		<a href="#"><img src="Images/scan.png"></a>
-		<a href="#"><img src="Images/pay.png"></a>
-		<a href="#"><img src="Images/pocket.png"></a>
-		<a href="http://www.baidu.com"><img src="Images/nearby.png"></a>
 	</div>
 	<!-- 中间滚动区域 -->
 	<div id="content">
@@ -174,7 +176,7 @@
     });
     </script>
     <script>
-    	var elem = document.getElementById("extra").childNodes[1];
+    	var elem = document.getElementById("extra-func");
     	var elem_div = document.getElementsByClassName("extra")[0];
     	elem.onclick = function(){
 			elem_div.style.visibility = "visible";
