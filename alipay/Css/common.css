@@ -150,7 +150,7 @@ tr td img{
 }
 .support .row a{
 	display: table-cell;
-	border: .5px solid #f7f7f7;
+	border: 1px solid #f7f7f7;
 	width: 25%;
 }
 .support-item{
