@@ -5,15 +5,65 @@
 	<title>图片点击全屏弹窗效果</title>
 	<style type="text/css">
 		.image{
-			position: 'fixed';
-			top: '50%';
-			left: '50%';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            font-size : 0
 		}
 	</style>
 </head>
 <body>
 	<div class="image">
-		<img src="http://baike.soso.com/p/2009071120090711101754-314944703.jpg">
+		<img src="http://pic2.52pk.com/files/allimg/140724/43125B_2032514003.jpg"
+		data-src="http://img01.taobaocdn.com/bao/uploaded/i1/15124020138391838/T1iM.tXbpbXXXXXXXX_!!0-item_pic.jpg">
 	</div>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+	 <!--图片弹窗脚本-->
+    <script type="text/javascript">
+        $(document).click(function(e){
+	        var obj = $(e.target);
+	        if (obj.is("img") && obj.attr("data-src")){
+	            new ImageMask({src:obj.attr("data-src")});
+	            if (obj.parents('a').length){
+	                e.preventDefault();
+	            }
+	        }
+	    });
+	    function ImageMask(option){
+	        $.extend(this, option);
+	        this.init();
+	    }
+	    ImageMask.prototype.init = function(){
+	        var maskCss = "position:absolute;top:0;left:0;width:100%;height:"+Math.max(document.body.scrollHeight, window.innerHeight)+"px;";
+	        maskCss += "z-index:9999;background:rgba(0,0,0,.5);";
+	        this.mask = $('<div style="'+maskCss+'"><div class="imageContainer"><img src="'+this.src+'"></div></div>');
+	        this.mask.find('.imageContainer').css({
+	            position: 'fixed',
+	            top: '50%',
+	            left: '50%',
+	            transform: 'translate(-50%,-50%)',
+	            '-webkit-transform': 'translate(-50%,-50%)',
+	            'font-size' : 0
+	        });
+	        var i = this.mask.find('.imageContainer img');
+
+	        i[0].onload = function(){
+	            i.css('width', Math.min(i[0].width, (window.innerWidth - 20))+'px');
+	        }
+	        var me = this;
+	        console.log(this.mask);
+	        this.mask.on('click', function(){
+	            me.hide();
+	        });
+	        $(document.body).append(this.mask);
+	    };
+	    ImageMask.prototype.hide = function(){
+	        this.mask.remove();
+	    };
+    </script>
 </body>
 </html>
