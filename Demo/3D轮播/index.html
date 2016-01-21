@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset='UTF-8'>
+    <title>jQuery和CSS3炫酷3D旋转画廊特效插件</title>
+    <script src='style/js/prefixfree.min.js'></script>
+    <style class="cp-pen-styles">
+        p
+        {
+            margin-top: 8rem;
+            font-size: 1rem;
+            color: #777;
+        }
+        .center
+        {
+            text-align: center;
+        }
+        p a
+        {
+            color: #fff;
+        }
+        div#carousel
+        {
+            perspective: 1200px;
+            background: #100000;
+            padding-top: 5%;
+            font-size: 0;
+            margin-bottom: 3rem;
+        }
+        figure#spinner
+        {
+            transform-style: preserve-3d;
+            height: 300px;
+            transform-origin: 50% 50% -400px;
+            transition: 1s;
+        }
+        figure#spinner figure
+        {
+            width: 20%;
+            max-width: 500px;
+            position: absolute;
+            left: 40%;
+            transform-origin: 50% 50% -400px;
+            outline: 1px solid transparent;
+            overflow: hidden;
+            transition: 1s;
+        }
+        
+        figure#spinner figure.focus
+        {
+            width: 26%;
+            left: 37%;
+            margin-top: -3rem;
+        }
+        figure#spinner figure img
+        {
+            width: 100%;
+        }
+        figcaption
+        {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            padding: .3rem;
+            z-index: 2;
+            font-size: 1.1rem;
+            background: rgba(0, 0, 0, 0);
+            transition: .6s;
+        }
+        
+        figure#spinner figure.current:hover figcaption, figure#spinner figure.current.caption figcaption
+        {
+            top: 90%;
+            background: rgba(0, 0, 0, 0.5);
+            bottom: 0;
+        }
+        
+        
+        div#carousel ~ span
+        {
+            color: #fff;
+            margin: 5%;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: 0.6s color;
+            position: relative;
+            margin-top: -6rem;
+            border-bottom: none;
+            line-height: 0;
+        }
+        div#carousel ~ span:hover
+        {
+            color: #888;
+            cursor: pointer;
+        }
+        a
+        {
+            color: #6c4176;
+            text-decoration: none;
+        }
+        .htmleaf-demo
+        {
+            width: 100%;
+        }
+        .htmleaf-demo a
+        {
+            display: inline-block;
+            margin: 0.5em;
+            padding: 0.6em 1em;
+            border: 3px solid #6c4176;
+            font-weight: 700;
+        }
+        .htmleaf-demo a:hover
+        {
+            opacity: 0.6;
+        }
+        .htmleaf-demo a.current
+        {
+            background: #6c4176;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+ 
+    <br />
+    <br />
+    <div id="carousel">
+        <figure id="spinner">
+<figure>
+  <img src="style/images/1.jpg" alt="">
+    <figcaption>Anton Ploom</figcaption>
+</figure>
+<figure>
+  <img src="style/images/2.jpg" alt="">
+    <figcaption>Annija Kopshtale</figcaption>
+</figure>
+<figure>
+  <img src="style/images/3.jpg" alt="">
+    <figcaption>Daria Elmakova</figcaption>
+  </figure>
+   <figure>
+     <img src="style/images/4.jpg" alt="">
+<figcaption>Margaret Rodchenkova</figcaption>
+</figure>
+<figure>
+  <img src="style/images/5.jpg" alt="">
+<figcaption>Marta Ozolina</figcaption>
+</figure>
+<figure>
+  <img src="style/images/6.jpg" alt="">
+<figcaption>Victoria Ananyan</figcaption>
+</figure>
+  <figure>
+    <img src="style/images/7.jpg" alt="">
+<figcaption>Ekaterina Gusarova</figcaption>
+</figure>
+</figure>
+    </div>
+    <span style="float: left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+    <span style="float: right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+    <script src='style/js/jquery.min.js'></script>
+    <script>
+        var spinner = document.querySelector('#spinner');
+        var angle = 0;
+        var numpics = $('figure#spinner figure').length;
+        degInt = 360 / numpics;
+        var start = 0;
+        var current = 1;
+        $(document).ready(function () {
+            $('figure#spinner figure').each(function () {
+                $(this).css('-webkit-transform', 'rotateY(-' + start + 'deg)');
+                $(this).css('transform', 'rotateY(-' + start + 'deg)');
+                start = start + degInt;
+            });
+        });
+        function setCurrent(current) {
+            $('figure#spinner figure:nth-child(' + current + ')').addClass('current');
+        }
+        function galleryspin(sign) {
+            $('figure#spinner figure').removeClass('current focus caption');
+            if (!sign) {
+                angle = angle + degInt;
+                current = current + 1;
+                if (current > numpics) {
+                    current = 1;
+                }
+            } else {
+                angle = angle - degInt;
+                current = current - 1;
+                if (current == 0) {
+                    current = numpics;
+                }
+            }
+            spinner.setAttribute('style', '-webkit-transform: rotateY(' + angle + 'deg); -moz-transform: rotateY(' + angle + 'deg); transform: rotateY(' + angle + 'deg)');
+            setCurrent(current);
+        }
+        $('figure#spinner figure').click(function () {
+            if ($(this).hasClass('current')) {
+                $(this).toggleClass('focus');
+            }
+        });
+        setCurrent(1);
+        $(document).keydown(function (e) {
+            switch (e.which) {
+                case 37:
+                    galleryspin('-');
+                    break;
+                case 39:
+                    galleryspin('');
+                    break;
+                case 90:
+                    $('figure#spinner figure.current').toggleClass('focus');
+                    break;
+                case 67:
+                    $('figure#spinner figure.current').toggleClass('caption');
+                    break;
+                default:
+                    return;
+            }
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
