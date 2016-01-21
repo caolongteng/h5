@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>小火箭</title>
+    <!-- 引入jQuery库 -->
+    <script src="js/jquery.min.js"></script>
+    <style>
+        *{
+            margin:0px; 
+            padding: 0px;
+            text-align: center;
+        }
+        .rockets{
+            width: 125px;
+            height: 209px;
+            position: fixed;
+            right: 150px;
+            top: 75%;
+            background: url('images/rockets.png') no-repeat 0px 0px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+        }
+        .rockets .layer{
+            width: 125px;
+            height: 209px;
+            background: url('images/rockets.png') no-repeat -125px 0px;
+            opacity: 0;
+        }
+    </style>        
+</head>
+<body>
+    2015<br>
+    南山南 - 马頔<br>
+    词：马頔<br>
+    曲：马頔<br><br>
+<p>
+    你在南方的艳阳里<br>
+    大雪纷飞<br>
+    我在北方的寒夜里<br>
+    四季如春<br>
+    如果天黑之前来得及<br>
+    我要忘了你的眼睛<br>
+    穷极一生<br>
+    做不完一场梦<br>
+    他不再和谁谈论相逢的孤岛<br>
+    因为心里早已荒无人烟<br>
+    他的心里再装不下一个家<br>
+    做一个只对自己说谎的哑巴<br>
+    他说你任何为人称道的美丽<br>
+    不及他第一次遇见你<br>
+    时光苟延残喘<br>
+    无可奈何<br>
+    如果所有土地连在一起<br>
+    走上一生<br>
+    只为拥抱你<br>
+    喝醉了他的梦<br>
+    晚安<br>
+    他听见有人唱着古老的歌<br>
+    唱着今天还在远方<br>
+    发生的像在她眼睛里<br>
+    看到的孤岛<br>
+    没有悲伤<br>
+    但也没有花朵<br>
+    你在南方的艳阳里大雪纷飞<br>
+    我在北方的寒夜里四季如春<br>
+    如果天黑之前来得及<br>
+    我要忘了你的眼睛穷极一生<br>
+    做不完一场梦<br>
+    你在南方的艳阳里大雪纷飞<br>
+    我在北方的寒夜里四季如春<br>
+    如果天黑之前来得及<br>
+    我要忘了你的眼睛穷极一生<br>
+    做不完一场梦<br>
+    大梦初醒<br>
+    荒唐了一生<br>
+    南山南<br>
+    北秋悲<br>
+    南山有谷堆南风喃<br>
+    北海北北海有墓碑<br>
+    南山南<br>
+    北秋悲<br>
+    南山有谷堆南风喃<br>
+    北海北北海有墓碑<br>
+    北海有墓碑<br><br>
+</p>
+<p>
+    你在南方的艳阳里<br>
+    大雪纷飞<br>
+    我在北方的寒夜里<br>
+    四季如春<br>
+    如果天黑之前来得及<br>
+    我要忘了你的眼睛<br>
+    穷极一生<br>
+    做不完一场梦<br>
+    他不再和谁谈论相逢的孤岛<br>
+    因为心里早已荒无人烟<br>
+    他的心里再装不下一个家<br>
+    做一个只对自己说谎的哑巴<br>
+    他说你任何为人称道的美丽<br>
+    不及他第一次遇见你<br>
+    时光苟延残喘<br>
+    无可奈何<br>
+    如果所有土地连在一起<br>
+    走上一生<br>
+    只为拥抱你<br>
+    喝醉了他的梦<br>
+    晚安<br>
+    他听见有人唱着古老的歌<br>
+    唱着今天还在远方<br>
+    发生的像在她眼睛里<br>
+    看到的孤岛<br>
+    没有悲伤<br>
+    但也没有花朵<br>
+    你在南方的艳阳里大雪纷飞<br>
+    我在北方的寒夜里四季如春<br>
+    如果天黑之前来得及<br>
+    我要忘了你的眼睛穷极一生<br>
+    做不完一场梦<br>
+    你在南方的艳阳里大雪纷飞<br>
+    我在北方的寒夜里四季如春<br>
+    如果天黑之前来得及<br>
+    我要忘了你的眼睛穷极一生<br>
+    做不完一场梦<br>
+    大梦初醒<br>
+    荒唐了一生<br>
+    南山南<br>
+    北秋悲<br>
+    南山有谷堆南风喃<br>
+    北海北北海有墓碑<br>
+    南山南<br>
+    北秋悲<br>
+    南山有谷堆南风喃<br>
+    北海北北海有墓碑<br>
+    北海有墓碑<br>
+</p>
+    <div class="rockets">
+        <div class="layer"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    //实现小火箭相对window进行定位，当页面滚动条滚动到相应的位置时阴影状态的小火箭图标淡出
+    var clicked = false; //没有被点击时为false
+    $(window).scroll(function(){
+        var s=$(window).scrollTop();
+        console.log(s);
+        if(s>200){
+            $(".rockets").fadeIn(400);
+        }else if(clicked==false){
+            $(".rockets").fadeOut(400);
+        };
+    });
+    //将灰色小火箭（rocket）进行隐藏，显示rocket里面div的小火箭图标（背景图第二个图标效果）——动态出现
+    $(".rockets").hover(function(){
+       $(".rockets .layer").stop(true,true).animate({"opacity":1},500);
+     },function(){
+       //判断当鼠标点击时进行淡出
+       if(clicked==false){
+           $(".rockets .layer").stop(true,true).animate({"opacity":0},500);
+        };
+    });
+    //修改背景图位置使其出现 连续喷火效果
+    var pos=1;
+    function bacChange(){
+        $(".rockets .layer").css({"background-position":pos*(-125)+"px 0px"});
+        pos++;
+        if(pos>=4){
+            pos=1;
+        };
+    };
+    //实现点击滚动条滚动到顶部的效果
+    $(".rockets").click(function(){
+        timer=setInterval(bacChange,0.1);
+        clicked=true;
+        $("html,body").animate({"scrollTop":0},600,function(){
+            clearInterval(timer);
+            $(".rockets .layer").css({"background-position":"-500px 0",});
+            $(".rockets").animate({"top":"-300px"},600,function(){
+                clicked=false;
+                $(".rockets").css({"top":"70%","display":"none"});
+                $(".rockets .layer").css({"opacity":"0","background-position":"-125px 0"});
+            });
+        });
+    });
+</script>
