@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>history back</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" charset="utf-8"/>
+    <script type="text/javascript" src="zepto.js"></script>
+    <style>
+		@-webkit-keyframes sliderightout{from{-webkit-transform:translateX(0px);}to{-webkit-transform:translateX(50%);}}
+		@-webkit-keyframes slideleftin{from{-webkit-transform:translateX(-50%);}to{-webkit-transform:translateX(0px);}}
+		@-webkit-keyframes slideleftout{from{-webkit-transform:translateX(0px);}to{-webkit-transform:translateX(-50%);}}
+		@-webkit-keyframes sliderightin{from{-webkit-transform:translateX(50%);}to{-webkit-transform:translateX(0px);}}
+		.slideleftout{-webkit-animation:slideleftout 350ms ease-in-out;}
+		.slideleftin{-webkit-animation:slideleftin 350ms ease-in-out;}
+		.sliderightout{-webkit-animation:sliderightout 350ms ease-in-out;}
+		.sliderightin{-webkit-animation:sliderightin 350ms ease-in-out;}
+		.animatestart{position:absolute;top:0;left:0;z-index:3;width:100%;height:100%;overflow-x:hidden}
+		.animatestart.page-container{overflow-x:hidden;-webkit-transform:translate3d(0,0,0);-webkit-backface-visibility:hidden;background-color:#f5f5f5}
+    	*{
+		    padding: 0;
+		    margin: 0;
+		}
+		.none {
+		    display: none;
+		}
+		div.a, div.b, div.c {
+		  position: absolute;
+		  height: 100%;
+		  overflow: scroll;
+		  width: 100%;
+		  color: #fff;
+		}
+		div span {
+		    display: block;
+		    font-size: 6.5em;
+		    text-align: center;
+		}
+		div p {
+		    font-size: 1.2em;
+		}
+		button {
+		  position: absolute;
+		  height: 40px;
+		  width: 100px;
+		  border-radius: 6px;
+		  background: #fff;
+		  bottom: 50px;
+		  border: 0;
+		}
+		button.back {
+		  left: 20px;
+		}
+		button.forward {
+		    right: 20px;
+		}
+		.a {
+		background: #19a39e;
+		}
+		 
+		.b{
+		background: rgb(245, 81, 81);
+		}
+		.c{
+		background: rgb(71, 142, 30);
+		}
+		.a div{
+			line-height:30px;
+			font-size:16px;
+			text-align:center;
+		}
+    </style>
+</head>
+<body>
+    <div class="a">
+    	<p>What we talk about when we talk about love</p>
+    	<span>A</span>
+    	<div>
+    		<p>其实我怕你总夸奖高估我坚忍</p>
+			<p>其实更怕你只懂得欣赏我品行</p>
+			<p>无人及我用字绝重拾了你信心</p>
+			<p>无人问我可甘心演这伟大化身</p>
+			<p>其实我想间中崩溃脆弱如恋人</p>
+			<p>谁在你两臂中低得不需要身份</p>
+			<p>无奈被你识穿这个念头</p>
+			<p>得到好处的你</p>
+			<p>明示不想失去绝世好友</p>
+			<p>没有得你的允许</p>
+			<p>我都会爱下去</p>
+			<p>互相祝福心软之际</p>
+			<p>或者准我吻下去</p>
+			<p>我痛恨成熟到</p>
+			<p>不要你望着我流泪</p>
+			<p>但漂亮笑下去</p>
+			<p>彷彿冬天饮雪水</p>
+			<p>被你一贯的赞许</p>
+			<p>却不配爱下去</p>
+			<p>在你悲伤一刻</p>
+			<p>必须解慰找到我乐趣</p>
+			<p>我甘于当副车</p>
+			<p>也是快乐着唏嘘</p>
+			<p>彼此这么了解</p>
+			<p>难怪注定似兄妹一对</p>
+			<p>其实我怕你的好感基于我修养</p>
+			<p>其实最怕你的私心亏准我体谅</p>
+			<p>无人问我寂寞像投何处去养伤</p>
+			<p>原来是我的心境高到变为偶像</p>
+			<p>谁情愿照耀着别人就如月亮</p>
+			<p>为奴婢为你备饭奉茶是残忍真相</p>
+			<p>无奈被你识穿这个念头</p>
+			<p>得到好处的你</p>
+			<p>明示不想失去绝世好友</p>
+			<p>没有得你的允许</p>
+			<p>我都会爱下去</p>
+			<p>互相祝福心软之际</p>
+			<p>或者准我吻下去</p>
+			<p>我痛恨成熟到</p>
+			<p>不要你望着我流泪</p>
+			<p>但漂亮笑下去</p>
+			<p>彷彿冬天饮雪水</p>
+			<p>被你一贯的赞许</p>
+			<p>却不配爱下去</p>
+			<p>在你悲伤一刻必须解慰</p>
+			<p>找到我乐趣</p>
+			<p>我甘于当副车</p>
+			<p>也是快乐着唏嘘</p>
+			<p>彼此这么了解</p>
+			<p>让我决定我的快乐</p>
+			<p>那须得你的允许</p>
+			<p>我都会爱下去</p>
+			<p>互相祝福心软之际</p>
+			<p>或者准我吻下去</p>
+			<p>我痛恨成熟到</p>
+			<p>不要你望着我流泪</p>
+			<p>但漂亮笑下去</p>
+			<p>彷彿冬天饮雪水</p>
+			<p>被你一贯的赞许</p>
+			<p>无须装说下去</p>
+			<p>在你悲伤一刻必须解慰</p>
+			<p>找到我乐趣</p>
+			<p>我甘于当副车</p>
+			<p>却没法撞入堡垒</p>
+			<p>彼此这么了解</p>
+			<p>难怪注定似兄妹一对</p>
+			<p>你的他怎允许</p>
+			<p>结伴观赏雪的泪</p>
+			<p>永不开封的汽水</p>
+			<p>让我抱在怀内吻下去</p>
+    	</div>
+    </div>
+    <div class="b none"><p>Quell nous sommes parlons lorsqur nous parlons d'amour</p><span>B</span></div>
+    <div class="c none"><p>当我们在談論爱情的时候，我们在談論些什么</p><span>C</span></div>
+    <button class="forward">FORWARD</button>
+    <script>
+    	//首先给history添加一条记录，使得第一个界面和后来的界面看起来是永远的以page=x结尾
+		window.history.pushState({info:'a'}, 'Page', '?page=a');
+		//数据源
+		var source = [
+		    {cls:'a', url:'?page=a'},
+		    {cls:'b', url:'?page=b'},
+		    {cls:'c', url:'?page=c'}
+		],
+		//数据源的下表，
+		k = 0,
+		//界面涨势的属性列表
+		index = ['a', 'b', 'c'],
+		//记录每个界面跳转的顺序的列表
+		stoage = [];   
+		 
+		//绑定按钮的tap事件，我们在移动端做测试，用的是tap，zepto会帮我们转译该事件
+		$('.forward').on('click', function(){
+		    if(typeof source[k+1] === 'object') {
+		        //取下一个界面的数据源
+		        var m = source[++k];
+		        //在这里填充history记录，pushstate是方法是不会引起界面刷新的，但是却会改变浏览器的回退/前进行为，执行这一步的时候可以看到地址栏中的url变化了。
+		        window.history.pushState({info:m.cls}, 'Page', m.url);
+		        //储存该节目名称到stoage列表中
+		        stoage.push(window.history.state.info);
+		        //下面是切换的动画，因为这里力求简单做的是一直向前走的动作，所以动画是从右到左的切换顺序
+		        $('.' + m.cls).removeClass('none').addClass("animatestart sliderightin").on('animationend, webkitAnimationEnd', function(){
+		        	$('.'+ source[k -1].cls).addClass('none');
+		            $('.' + m.cls).removeClass('animatestart sliderightin').off('animationend, webkitAnimationEnd');
+		        });
+		    }
+		})
+		//利用stoage的存储和index列表中的先后规则，放回动画翻转顺，是从左到右，还是从右到左
+		function j() {
+		    var l = stoage.length;
+		    if(index.indexOf(stoage[l-2]) < index.indexOf(stoage[l-1])) {
+		        return 'animatestart sliderightin';
+		    }else{
+		        return 'animatestart slideleftin';
+		    }
+		}
+		var flag = false;
+		//开始监听浏览器的前进/后退行为
+		$(window).on('popstate', function(state) {
+			if (!flag){
+				flag = true;
+				return;
+			}
+		    //移除按钮
+		    $('.forward').off('click').remove();
+
+		    //将本界面名称存入stoage列表中
+		    window.history.state.info?stoage.push(window.history.state.info):'';
+		    //取得上一个界面的名称
+		    var thiscls = stoage[stoage.length - 2];
+		    //取得当前界面的名称
+		    var nextcls = stoage[stoage.length - 1];
+		    //判断是否回到第一个页面选择是否执行后续动画
+		    if (thiscls == nextcls)	{
+		    	return;
+		    }
+		    //对比两个界面获得动画效果
+		    var cls = j();
+		    //执行动画效果
+		    $('.' + nextcls).removeClass('none').addClass(cls).on('animationend, webkitAnimationEnd', function(){
+		        	$('.'+ thiscls).addClass('none');
+		            $('.' + nextcls).removeClass(cls).off('animationend, webkitAnimationEnd');
+	        });
+		});
+    </script>
+</body>
+</html>
