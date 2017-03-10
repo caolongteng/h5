@@ -5,6 +5,7 @@
 2.[清除浮动](#clear)
 3.[单词强制换行](#word-wrap)
 4.[文本超出显示...](#text-overflow)
+5.[设置input的placeholder](#placeholder)
 ###<a id="reset">1.移动端重置样式</a>
 去除因浏览器差异引起的样式不统一，重置样式
 ```css
@@ -40,20 +41,26 @@ p{
 }
 ```
 ###<a id="text-overflow">文本超出显示...</a>
-```
-单行文本
+```css
+/*单行文本*/
 div{
     text-overflow: ellipsis;
     display:block;
     white-space:nowrap;
     overflow:hidden;
 }
-多行文本
+/*多行文本*/
 div{
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;（灵活替换）
     display: -webkit-box;
     overflow: hidden;
     -webkit-box-orient: vertical;
+}
+```
+###<a id="placeholder">设置input的placeholder</a>
+```css
+input::-webkit-input-placeholder {
+    color: #d0d0d0;
 }
 ```
