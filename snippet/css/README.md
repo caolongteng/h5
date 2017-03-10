@@ -1,10 +1,10 @@
 #Css代码片段
 ---
 ##目录
-1.[移动端重置样式](#reset)
-2.[清除浮动](#clear)
-3.[单词强制换行](#word-wrap)
-4.[文本超出显示...](#text-overflow)
+1.[移动端重置样式](#reset)  
+2.[清除浮动](#clear)  
+3.[单词强制换行](#word-wrap)  
+4.[文本超出显示...](#text-overflow)  
 5.[设置input的placeholder](#placeholder)
 ###<a id="reset">1.移动端重置样式</a>
 去除因浏览器差异引起的样式不统一，重置样式

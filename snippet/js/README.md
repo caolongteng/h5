@@ -1,9 +1,9 @@
 #Js代码片段
 ---
 ##目录
-1.[移动端初始化rem布局](#reset)
-2.[获取url传参](#param)
-3.[cookie操作](#cookie)
+1.[移动端初始化rem布局](#reset)  
+2.[获取url传参](#param)  
+3.[cookie操作](#cookie)  
 ###<a id="reset">1.移动端初始化rem布局</a>
 移动端自适应布局初始化逻辑，以750宽度为基准值
 ```js
