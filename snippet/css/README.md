@@ -22,6 +22,9 @@ body {
   /*禁止ios 长按时不触发系统的菜单，禁止ios&android长按时下载图片*/
   -webkit-tap-highlight-color: transparent;
   /*去掉ios系统中元素被触摸时产生的半透明灰色遮罩*/
+  -webkit-text-size-adjust: none;
+  max-height: 9999px;
+  /*webkit内核下，对不定高宽的元素可能会放大其字体，禁用文字缩放或者设置max-height*/
 }
 ```
 ###<a id="clear">清除浮动</a>
