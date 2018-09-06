@@ -1,12 +1,12 @@
 #Css代码片段
 ---
-##目录
+## 目录
 1.[移动端重置样式](#reset)  
 2.[清除浮动](#clear)  
 3.[单词强制换行](#word-wrap)  
 4.[文本超出显示...](#text-overflow)  
 5.[设置input的placeholder](#placeholder)
-###<a id="reset">1.移动端重置样式</a>
+### <a id="reset">1.移动端重置样式</a>
 去除因浏览器差异引起的样式不统一，重置样式
 ```css
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
@@ -27,7 +27,7 @@ body {
   /*webkit内核下，对不定高宽的元素可能会放大其字体，禁用文字缩放或者设置max-height*/
 }
 ```
-###<a id="clear">清除浮动</a>
+### <a id="clear">清除浮动</a>
 在浮动元素的父级元素添加clear类
 ```css
 .clear:after{
@@ -36,14 +36,14 @@ body {
     clear: both;
 }
 ```
-###<a id="word-wrap">单词强制换行</a>
+### <a id="word-wrap">单词强制换行</a>
 ```css
 p{
   word-wrap: break-word; 
   word-break: normal; 
 }
 ```
-###<a id="text-overflow">文本超出显示...</a>
+### <a id="text-overflow">文本超出显示...</a>
 ```css
 /*单行文本*/
 div{
@@ -61,7 +61,7 @@ div{
     -webkit-box-orient: vertical;
 }
 ```
-###<a id="placeholder">设置input的placeholder</a>
+### <a id="placeholder">设置input的placeholder</a>
 ```css
 input::-webkit-input-placeholder {
     color: #d0d0d0;
