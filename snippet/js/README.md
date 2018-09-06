@@ -1,10 +1,10 @@
 #Js代码片段
 ---
-##目录
+## 目录
 1.[移动端初始化rem布局](#reset)  
 2.[获取url传参](#param)  
 3.[cookie操作](#cookie)  
-###<a id="reset">1.移动端初始化rem布局</a>
+### <a id="reset">1.移动端初始化rem布局</a>
 移动端自适应布局初始化逻辑，以750宽度为基准值
 ```js
 (function(){
@@ -15,7 +15,7 @@
     (window.onresize = window.onload = resize) && resize();
 })()
 ```
-###<a id="param">获取url传参</a>
+### <a id="param">获取url传参</a>
 获取url中传过来的参数
 ```js
 function getParam(name){
@@ -27,7 +27,7 @@ function getParam(name){
     return false;
 }
 ```
-###<a id="cookie">cookie操作</a>
+### <a id="cookie">cookie操作</a>
 ```js
 var cookie = {
     //写cookies
